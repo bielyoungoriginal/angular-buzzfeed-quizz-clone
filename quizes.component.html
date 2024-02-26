@@ -1,0 +1,19 @@
+<div class="quizContainer">
+    <div class="quizLogo">
+      <img src="https://www.bing.com/images/search?view=detailV2&ccid=LHUczmZS&id=8FB6752B22F47C253538852A5909F8FECB74A0EC&thid=OIP.LHUczmZSH19bfAtMOWTggwHaEj&mediaurl=https%3a%2f%2fwww.tubefilter.com%2fwp-content%2fuploads%2f2015%2f08%2fbuzzfeed.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.2c751cce66521f5f5b7c0b4c3964e083%3frik%3d7KB0y%252f74CVkqhQ%26pid%3dImgRaw%26r%3d0&exph=700&expw=1140&q=buzzfeed&simid=607993943305312260&FORM=IRPRST&ck=5C74B062EB91657C96BD044A170B6342&selectedIndex=1&itb=0" alt="" srcset="">
+      <h3>{{title}}</h3>
+    </div>
+    <div class="quizQuestions">
+      <h3>{{questionSelect.question}}</h3>
+    </div>
+    <div class="quizOptions">
+      <button *ngFor="let option of questionSelect.option; let i = index" 
+      (click)="playerChoose(option.alias)" class="btn-option">
+        {{option.name}}
+      </button>
+    </div>
+    <div *ngIf=finished class="quizResult">
+      <h3>Resultado:</h3>
+      <p>{{answerSelect}}</p>
+    </div>
+  </div>
